@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 02 | MBA Peradeniya University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        .coconut-accent {
+            color: #f59e0b; /* Amber for King Coconut */
+        }
+
+        .bg-gradient-coconut {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .page-indicator {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #cbd5e1;
+            border-radius: 50%;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #f59e0b;
+            transform: scale(1.3);
+        }
+
+        @media print {
+            .slide {
+                min-height: auto;
+                page-break-after: always;
+            }
+            .page-indicator { display: none; }
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Navigation Dots -->
+    <div class="page-indicator hidden md:block">
+        <div class="dot active" onclick="scrollToSlide(0)"></div>
+        <div class="dot" onclick="scrollToSlide(1)"></div>
+        <div class="dot" onclick="scrollToSlide(2)"></div>
+        <div class="dot" onclick="scrollToSlide(3)"></div>
+        <div class="dot" onclick="scrollToSlide(4)"></div>
+        <div class="dot" onclick="scrollToSlide(5)"></div>
+        <div class="dot" onclick="scrollToSlide(6)"></div>
+        <div class="dot" onclick="scrollToSlide(7)"></div>
+        <div class="dot" onclick="scrollToSlide(8)"></div>
+        <div class="dot" onclick="scrollToSlide(9)"></div>
+    </div>
+
+    <!-- Slide 1: Title -->
+    <section class="slide bg-gradient-to-br from-orange-50 to-amber-100" id="slide-0">
+        <div class="text-center space-y-6 max-w-4xl px-4">
+            <h3 class="text-xl font-semibold text-amber-600 uppercase tracking-widest">MBA - University of Peradeniya</h3>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 leading-tight">Strategic Internationalization of Sri Lankan King Coconut</h1>
+            <div class="h-1 w-32 bg-amber-500 mx-auto"></div>
+            <p class="text-2xl text-slate-600">Premium Export Strategy for "Thambili"</p>
+            <div class="pt-10">
+                <span class="px-6 py-2 bg-white rounded-full shadow-md font-bold text-slate-700">GROUP 02</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Executive Summary -->
+    <section class="slide" id="slide-1">
+        <div class="max-w-5xl w-full">
+            <h2 class="text-3xl font-bold mb-12 border-l-8 border-amber-500 pl-4">Executive Summary</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-amber-400">
+                    <i class="fa-solid fa-bullseye text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Core Strategy</h3>
+                    <p class="text-slate-600">Focused Differentiation. Positioned as a premium functional beverage, not a commodity.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-blue-400">
+                    <i class="fa-solid fa-earth-asia text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Target Market</h3>
+                    <p class="text-slate-600">Middle East (UAE, Qatar, Saudi Arabia) targeting health-conscious consumers.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-green-400">
+                    <i class="fa-solid fa-truck-fast text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Entry Mode</h3>
+                    <p class="text-slate-600">Direct Exporting via regional distributors to maintain low risk and high flexibility.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-purple-400">
+                    <i class="fa-solid fa-star text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Value Prop</h3>
+                    <p class="text-slate-600">Natural, organic electrolytes and "Pure Origin" branding from Sri Lanka.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Competitive Advantages -->
+    <section class="slide bg-white" id="slide-2">
+        <div class="max-w-6xl w-full">
+            <h2 class="text-3xl font-bold mb-12 text-center">Competitive Advantage Framework</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-amber-600 flex items-center gap-2">
+                        <i class="fa-solid fa-building"></i> Firm-Specific (Internal)
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span>Direct farm-to-export sourcing network</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span>Cold-chain logistics & HACCP certification</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg">
+                            <i class="fa-solid fa-check text-green-500 mt-1"></i>
+                            <span>Premium "Pure Origin" brand identity</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold text-blue-600 flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot"></i> Geographic (Sri Lanka)
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg">
+                            <i class="fa-solid fa-certificate text-blue-500 mt-1"></i>
+                            <span>Native Origin: Thambili is unique to Sri Lanka</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg">
+                            <i class="fa-solid fa-sun text-blue-500 mt-1"></i>
+                            <span>Ideal climate for 365-day production cycle</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-slate-50 p-4 rounded-lg">
+                            <i class="fa-solid fa-anchor text-blue-500 mt-1"></i>
+                            <span>Strategic location for ME/Asia trade routes</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: International Strategy Framework -->
+    <section class="slide bg-slate-900 text-white" id="slide-3">
+        <div class="max-w-4xl text-center space-y-8">
+            <h2 class="text-3xl font-bold text-amber-400">International Strategy Choice</h2>
+            <div class="p-10 border-2 border-dashed border-slate-700 rounded-3xl">
+                <h3 class="text-5xl font-bold mb-4">Export Strategy</h3>
+                <p class="text-xl text-slate-400">Low Global Integration | Low Local Responsiveness</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 text-left pt-8">
+                <div class="p-4 bg-slate-800 rounded-xl">
+                    <h4 class="font-bold text-amber-400 mb-2">Standardization</h4>
+                    <p class="text-sm">Product remains pure and unchanged across all markets.</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl">
+                    <h4 class="font-bold text-amber-400 mb-2">Centralization</h4>
+                    <p class="text-sm">Production in Sri Lanka ensures strict quality control.</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-xl">
+                    <h4 class="font-bold text-amber-400 mb-2">Low Pressure</h4>
+                    <p class="text-sm">Consumer expectations for natural drinks are universal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Market Selection -->
+    <section class="slide" id="slide-4">
+        <div class="max-w-5xl w-full text-center">
+            <h2 class="text-3xl font-bold mb-12">Primary Market: The Middle East</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="w-48 h-48 rounded-full border-4 border-amber-500 flex flex-col items-center justify-center bg-white shadow-xl">
+                    <span class="text-3xl font-bold">UAE</span>
+                    <span class="text-xs text-slate-500">Dubai/Abu Dhabi</span>
+                </div>
+                <div class="w-48 h-48 rounded-full border-4 border-amber-500 flex flex-col items-center justify-center bg-white shadow-xl">
+                    <span class="text-3xl font-bold">Qatar</span>
+                    <span class="text-xs text-slate-500">Doha</span>
+                </div>
+                <div class="w-48 h-48 rounded-full border-4 border-amber-500 flex flex-col items-center justify-center bg-white shadow-xl">
+                    <span class="text-3xl font-bold">KSA</span>
+                    <span class="text-xs text-slate-500">Riyadh/Jeddah</span>
+                </div>
+            </div>
+            <div class="mt-12 p-8 glass-card rounded-2xl max-w-3xl mx-auto">
+                <p class="text-lg italic text-slate-700">"Targeting high-income expats and health-aware locals seeking exotic functional beverages."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: CAGE Distance Analysis -->
+    <section class="slide bg-amber-50" id="slide-5">
+        <div class="max-w-5xl w-full">
+            <h2 class="text-3xl font-bold mb-12 text-center">CAGE Analysis</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-b-4 border-amber-500">
+                    <h3 class="font-bold text-lg mb-2">Cultural</h3>
+                    <p class="text-sm text-slate-600">High familiarity with coconut; halal alignment and natural preference.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-b-4 border-blue-500">
+                    <h3 class="font-bold text-lg mb-2">Administrative</h3>
+                    <p class="text-sm text-slate-600">Clear trade protocols and strong existing bilateral diplomatic ties.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-b-4 border-green-500">
+                    <h3 class="font-bold text-lg mb-2">Geographic</h3>
+                    <p class="text-sm text-slate-600">Proximity to SL; low transit time (4-7 days) critical for freshness.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border-b-4 border-purple-500">
+                    <h3 class="font-bold text-lg mb-2">Economic</h3>
+                    <p class="text-sm text-slate-600">High purchasing power supports premium niche pricing strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Mode of Entry -->
+    <section class="slide" id="slide-6">
+        <div class="max-w-4xl w-full">
+            <h2 class="text-3xl font-bold mb-8">Mode of Entry: Exporting</h2>
+            <div class="bg-white p-10 rounded-3xl shadow-2xl border border-slate-100">
+                <div class="flex flex-col md:flex-row gap-10 items-center">
+                    <div class="md:w-1/2 space-y-4">
+                        <div class="flex items-center gap-4 text-green-600">
+                            <i class="fa-solid fa-circle-check text-2xl"></i>
+                            <span class="font-bold">Low Investment & Risk</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-green-600">
+                            <i class="fa-solid fa-circle-check text-2xl"></i>
+                            <span class="font-bold">No Overseas Infrastructure</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-green-600">
+                            <i class="fa-solid fa-circle-check text-2xl"></i>
+                            <span class="font-bold">High Operational Flexibility</span>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-amber-50 p-6 rounded-2xl">
+                        <p class="text-slate-700 leading-relaxed">
+                            "Exporting through local distributors allows us to test market appetite without heavy capital expenditure, while maintaining 100% production control in Sri Lanka."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Operations -->
+    <section class="slide bg-slate-50" id="slide-7">
+        <div class="max-w-5xl w-full">
+            <h2 class="text-3xl font-bold mb-12 text-center">Operational Flow</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-amber-500 text-white rounded-full flex items-center justify-center mx-auto text-2xl font-bold shadow-lg">1</div>
+                    <h4 class="font-bold">Sourcing</h4>
+                    <p class="text-sm text-slate-500">Directly from certified Thambili growers.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-amber-500 text-white rounded-full flex items-center justify-center mx-auto text-2xl font-bold shadow-lg">2</div>
+                    <h4 class="font-bold">Processing</h4>
+                    <p class="text-sm text-slate-500">Minimal handling to preserve enzymes.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-amber-500 text-white rounded-full flex items-center justify-center mx-auto text-2xl font-bold shadow-lg">3</div>
+                    <h4 class="font-bold">Logistics</h4>
+                    <p class="text-sm text-slate-500">Refrigerated sea freight (Reefers).</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-16 h-16 bg-amber-500 text-white rounded-full flex items-center justify-center mx-auto text-2xl font-bold shadow-lg">4</div>
+                    <h4 class="font-bold">Placement</h4>
+                    <p class="text-sm text-slate-500">Premium retail & luxury wellness spots.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Roadmap -->
+    <section class="slide" id="slide-8">
+        <div class="max-w-4xl w-full">
+            <h2 class="text-3xl font-bold mb-12 border-l-8 border-slate-800 pl-4">Growth Roadmap</h2>
+            <div class="space-y-8">
+                <div class="flex gap-6 items-start">
+                    <div class="px-4 py-2 bg-amber-100 text-amber-700 font-bold rounded">PHASE 1</div>
+                    <div>
+                        <h4 class="font-bold text-xl">Establish Brand Presence</h4>
+                        <p class="text-slate-600">Penetrate Dubai and Doha high-end retail chains.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="px-4 py-2 bg-amber-100 text-amber-700 font-bold rounded">PHASE 2</div>
+                    <div>
+                        <h4 class="font-bold text-xl">Scale Regional Reach</h4>
+                        <p class="text-slate-600">Expand to Saudi Arabian major cities and luxury hotels.</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start">
+                    <div class="px-4 py-2 bg-amber-100 text-amber-700 font-bold rounded">PHASE 3</div>
+                    <div>
+                        <h4 class="font-bold text-xl">Value-Added Partnerships</h4>
+                        <p class="text-slate-600">Explore private-label supplying for international wellness brands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Conclusion -->
+    <section class="slide bg-gradient-to-br from-slate-800 to-slate-900 text-white text-center" id="slide-9">
+        <div class="max-w-3xl space-y-8">
+            <h2 class="text-4xl font-bold text-amber-400">Conclusion</h2>
+            <p class="text-xl text-slate-300 leading-relaxed">
+                "By leveraging Sri Lanka’s unique geographic identity and employing a low-risk export model, we position the King Coconut as the global gold standard for natural hydration."
+            </p>
+            <div class="h-px w-full bg-slate-700 my-8"></div>
+            <div class="space-y-2">
+                <p class="text-amber-500 font-bold tracking-widest uppercase">MBA Programme</p>
+                <p class="text-slate-400">University of Peradeniya</p>
+                <p class="text-lg mt-4 font-semibold">GROUP 02</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function scrollToSlide(index) {
+            const target = document.getElementById(`slide-${index}`);
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', () => {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            let current = 0;
+            slides.forEach((slide, index) => {
+                const rect = slide.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    current = index;
+                }
+            });
+
+            dots.forEach((dot, index) => {
+                if (index === current) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
